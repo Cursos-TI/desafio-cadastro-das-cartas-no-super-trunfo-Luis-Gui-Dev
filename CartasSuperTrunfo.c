@@ -17,45 +17,61 @@
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
 int main() {
-    /* Irei fazer de só um dos estados, quando eu tiver a aula de laços de repeticão, Arrey, Se e senão e Structs, o código ficará melhor.
+    /* Quando eu tiver a aula de laços de repeticão, Arrey, Se e senão e Structs, o código ficará melhor.
     Eu tenho a base da programação mas ainda não sei sobre C, por enquanto vou abrir variavel pra cada um.*/ 
 
-    // Nomes do País e dos Estados
-    char nomePais[50], nomeEstadoA[50]; 
     // Nomes das Cidades (divididas por numeração)
-    char nomeCidadeA01[50], nomeCidadeA02[50], nomeCidadeA03[50], nomeCidadeA04[50];
+    char nomeEstado01[2] = "", nomeEstado02[2] = "", nomeCidade01[50] = "", nomeCidade02[50] = "";
     // População das Cidades
-    int popuA01, popuA02, popuA03, popuA04;
-    // PIB
-    int pibA01, pibA02, pibA03, pibA04;
+    int popu01 = -1, popu02 = -1;
     // Área
-    float areaA01, areaA02, areaA03, areaA04;
+    float area01 = -1.0, area02 = -1.0;
+    // PIB
+    float pib01 = -1.0, pib02 = -1.0;
     // Número de Pontos Turísticos
-    int numPTA01 = 1, numPTA02 = 1, numPTA03 = 1, numPTA04 = 1; 
+    int numPT01 = -1, numPT02 = -1; 
 
     // Cadrasto de dados
-    printf("OLÁ SEJA BEM VNDO AO SURPE TRUFO PAÍSES\n");
+    printf("OLÁ SEJA BEM VNDO AO SUPER TRUFO PAÍSES\n");
     printf ("------------------------------------------------------------------------------\n");
-    printf ("REGRAS:\nInforme o nome do País, o nome dos Estados e o nome de 4 (quatro) cidades por estado e\n");
+    printf ("REGRAS:\nInforme uma letra de A a H representando o Estado e o nome da cidade e\n");
     printf("depois infome seus Respectivos números de População, Área, PIB e Número de pontos turísticos. \n(Utilize ponto ao inves de virgula para dividir os números) (Nivel Novato)\n");
     printf ("------------------------------------------------------------------------------\n");
-    printf ("Qual é o nome do seu País? ");
-    scanf("%s", &nomePais);
-    printf("Qual o nome do primeiro estado? ");
-    scanf("%s", &nomeEstadoA);
-    printf("Qual é o nome da primeira cidade? ");
-    scanf("%s", &nomeCidadeA01);
-    printf("Me informe a população da cidade %s (Sem . ou ,)\n", nomeCidadeA01);
-    scanf("%d", &popuA01);
-    printf("Me informe a Área da cidade %s (em km quadrados)\n", nomeCidadeA01);
-    scanf("%f", &areaA01);
-    printf("Me informe o PIB da cidade %s (Sem . ou ,)\n ", nomeCidadeA01); // Depois fazer uma função para reconhecer bilhão, milhão, mil...
-    scanf("%d", &pibA01);
-    printf("Me informe de Número de pontos turísticos da cidade %s\n", nomeCidadeA01);
-    scanf("%d", &numPTA01);
-    printf("Cadastro da Carta %s bem sucedida!", nomeCidadeA01);
-    printf("Informações:\n Estado: %s\n Cidade: %s\n População: %d\n Área: %.3f\n PIB: %d\n Número de pontos turísticos: %i\n", nomeEstadoA, nomeCidadeA01, popuA01, areaA01, pibA01, numPTA01);
-    printf("Deseja cadastrar uma nova cidade? (s/n) -------EM DESENVOLVIMENTO\n");
+    // Leitura dos dados da primeira Carta
+    printf("Qual o nome do primeiro estado? (represente por letras de A a H) ");
+        scanf("%1s", nomeEstado01);
+    printf("Qual é o nome da cidade? ");
+        scanf("%s", nomeCidade01);
+    printf("Me informe a população da cidade (Sem . ou ,)\n");
+        scanf("%d", &popu01);
+    printf("Me informe a Área da cidade (em km quadrados)\n");
+        scanf("%f", &area01);
+    printf("Me informe o PIB da cidade (Sem . ou ,)\n "); // Depois fazer uma função para reconhecer bilhão, milhão, mil...
+        scanf("%f", &pib01);
+    printf("Me informe de Número de pontos turísticos da cidade\n");
+        scanf("%d", &numPT01);
+    printf("Cadastro da Carta %s01 bem sucedida!\n", nomeEstado01);
+    printf("Deseja cadastrar uma nova cidade? (s/n) -------INDISPONIVEL: EM DESENVOLVIMENTO\n");
+    // Leitura dos dados da segunda carta
+    printf("Qual o nome do segundo estado? (represente por letras de A a H) ");
+        scanf("%1s", nomeEstado02);
+    printf("Qual é o nome da cidade? ");
+        scanf("%s", nomeCidade02);
+    printf("Me informe a população da cidade (Sem . ou ,)\n");
+        scanf("%d", &popu02);
+    printf("Me informe a Área da cidade (em km quadrados)\n");
+        scanf("%f", &area02);
+    printf("Me informe o PIB da cidade (Sem . ou ,)\n "); // Depois fazer uma função para reconhecer bilhão, milhão, mil...
+        scanf("%f", &pib02);
+    printf("Me informe de Número de pontos turísticos da cidade\n");
+        scanf("%d", &numPT02);
+    printf("Cadastro da Carta %s02 bem sucedida!\n", nomeEstado02);
+    printf("Deseja cadastrar uma nova cidade? (s/n) -------INDISPONIVEL: EM DESENVOLVIMENTO\n");
+    // Exibição das informações
+    printf("Informações:\n Carta 01:\n Estado: %s\n Cidade: %s\n Codigo: %s01\n População: %d\n Área: %.2fkm²\n PIB: %.2f\n Número de pontos turísticos: %d\n", 
+        nomeEstado01, nomeCidade01, nomeEstado01, popu01, area01, pib01, numPT01);
+    printf("Carta 02:\n Estado: %s\n Cidade: %s\n Codigo: %s02\n População: %d\n Área: %.2f\n PIB: %,2f\n Número de pontos turísticos: %d\n", 
+        nomeEstado02, nomeCidade02, nomeEstado02, popu02, area02, pib02, numPT02);
 
     return 0;
 }
